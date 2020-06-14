@@ -7,4 +7,4 @@
 *.js linguist-vendored=false
 *.cs linguist-detectable=false
 *.csharp linguist-vendored=true
-
+*.csharp linguist-detectable=true
