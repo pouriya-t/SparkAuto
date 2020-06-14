@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-SparkAuto-A9917931-E450-4E47-9023-D7FE4700A133</UserSecretsId>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="PhotoSauce.MagicScaler" Version="0.10.1" />
+    <PackageReference Include="SendGrid" Version="9.12.7" />
+  </ItemGroup>
+
+<ItemGroup>
+    <Content Update="wwwwroot/content/blog/*.*" CopyToPublishDirectory="Never" />
+    <Content Update="wwwwroot/lib/**/*.*" CopyToPublishDirectory="Never" />
+    <Content Update="wwwwroot/lib/**/dist/**/*.*" CopyToPublishDirectory="Always" />
+  </ItemGroup>
+
+<ItemGroup>
+  <Folder Include="wwwroot\uploads\" />
+</ItemGroup>
+
+
+</Project>

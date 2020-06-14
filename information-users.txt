@@ -1,0 +1,26 @@
+information users:
+
+
+
+            _userManager.CreateAsync(new ApplicationUser
+            {
+                UserName = "admin@gmail.com",
+                Email = "admin@gmail.com",
+                Name = "Pouria Tajik",
+                EmailConfirmed=true,
+                PhoneNumber="1233345"
+
+            },"Admin123*").GetAwaiter().GetResult();
+
+            IdentityUser user = await _db.Users
+                .FirstOrDefaultAsync(u => u.Email == "admin@gmail.com");
+
+
+
+
+pouriya.un@gmail.com
+Pu@13731373
+
+
+test@test.com
+Pu@13731373

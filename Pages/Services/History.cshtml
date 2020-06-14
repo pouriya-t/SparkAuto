@@ -1,0 +1,114 @@
+﻿@page
+@model SparkAuto.HistoryModel
+@{
+    ViewData["Title"] = "History";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="container pt-4 pb-2 row">
+    <div class="col-6">
+        <h2 class="text-info py-2">Service History</h2>
+    </div>
+    <div class="col-3 offset-3 text-right py-2"
+         style="background:linear-gradient(to bottom, #ffffff -1%, #ccffcc 99%);
+            border-radius:10px;">
+        <a asp-page="../Cars/Index" asp-route-userId="@Model.UserId"
+           class="btn btn-outline-success form-control">
+            Back To List
+        </a>
+    </div>
+</div>
+
+@if (Model.ServiceHeader.Count == 0)
+{
+    <div class="backgroundWhite">
+        <p>No Service Record ...</p>
+    </div>
+}
+else
+{
+    <form method="post" style="width:100%;">
+        <div class="container backgroundWhite">
+
+            <div class="card">
+                <div class="card-header bg-dark text-light ml-0 row container">
+                    <div class="col-1 text-center pt-3 text-white-50">
+                        <i class="far fa-user fa-2x"></i>
+                    </div>
+                    <div class="col-5">
+                        <label class="text-info">
+                            @Model.ServiceHeader[0].Car.Application.Name
+                        </label><br />
+                        <label class="text-info">
+                            @Model.ServiceHeader[0].Car.Application.Email  / @Model.ServiceHeader[0].Car.Application.PhoneNumber
+                        </label>
+                    </div>
+
+                    <div class="col-5 text-right">
+                        <label class="text-info">
+                            @Model.ServiceHeader[0].Car.Make  @Model.ServiceHeader[0].Car.Model @Model.ServiceHeader[0].Car.Style
+                        </label><br />
+                        <label class="text-info">
+                            @Model.ServiceHeader[0].Car.Year
+                        </label><br />
+                    </div>
+                    <div class="col-1 text-center pt-3 text-white-50">
+                        <i class="fas fa-car fa-2x"></i>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <table class="table table-striped border">
+                        <tr class="table-secondary">
+                            <th>
+                                @Html.DisplayNameFor(m => Model.ServiceHeader[0].Miles)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(m => Model.ServiceHeader[0].TotalPrice)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(m => Model.ServiceHeader[0].Details)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(m => Model.ServiceHeader[0].DateAdded)
+                            </th>
+                            <th></th>
+                        </tr>
+                        @foreach (var item in Model.ServiceHeader)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(m => item.Miles)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.TotalPrice)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.Details)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.DateAdded)
+                                </td>
+                                <td>
+                                    <a asp-page="Details" class="btn btn-info form-control" asp-route-serviceid="@item.Id">
+                                        <i class="fas fa-list-alt"></i> Details
+                                    </a>
+
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+}
+
+
