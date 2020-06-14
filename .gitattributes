@@ -1,6 +1,7 @@
 *.js linguist-vendored=false
 *.css linguist-detectable=false
 *.cs linguist-detectable=false
+*.js linguist-detectable=false
 *.csharp linguist-vendored=true
 *.csharp linguist-detectable=true
 
