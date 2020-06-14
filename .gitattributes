@@ -1,3 +1,10 @@
+* linguist-vendored
+*.js linguist-vendored=false
+*.css linguist-detectable=false
+*.csharp linguist-vendored=true
+*.csharp linguist-detectable=true
+
+
 *.csharp linguist-detectable=true
 *.java linguist-detectable=false
 *.js linguist-detectable=false
