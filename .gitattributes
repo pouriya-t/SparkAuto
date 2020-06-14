@@ -5,4 +5,5 @@
 *.xml linguist-detectable=false
 
 *.html linguist-vendored
+css/* linguist-vendored
 
