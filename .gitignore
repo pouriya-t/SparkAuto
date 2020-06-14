@@ -89,6 +89,7 @@ StyleCopReport.xml
 *.scc
 *.min.js
 *.min.css
+*.css
 
 # Chutzpah Test files
 _Chutzpah*
